@@ -759,7 +759,26 @@
       
     ">
     <div class="content">
-      
+      <canvas id="YourCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas>
+        
+        <script>
+        var c = document.getElementById("YourCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(95,50,40,0,2*Math.PI);
+        ctx.stroke();
+        var img = new Image;
+        img.onload = function(){
+            x=0;
+            setInterval(() => {
+                ctx.drawImage(img,x,0); // Or at whatever offset you like
+                x=x+10;
+            }, 200);
+          
+        };
+        img.src = "jerry1.png";
+        </script> 
       
       
       
